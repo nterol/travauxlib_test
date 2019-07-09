@@ -1,19 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect } from "react";
 
-import fetcher from './fetch';
+import { useDispatch, useSelector } from "react-redux";
 
-const Dummy = ({data}:{data:any}) => <div>{JSON.stringify(data)}</div>
+import actionTypes from "../redux/actionTypes";
+import { StateType } from "../redux/reducers/types";
 
 function Main() {
+  const dispatch = useDispatch();
+  const query = useSelector((state: StateType) => state.query);
+  useEffect(() => {
+    dispatch({ type: actionTypes.getData });
+  }, [dispatch]);
 
-    const [data, setData] = useState<any>("")
-
-    useEffect(() => {
-       const data = fetcher(); 
-       setData(data);
-    }, []) 
-
-    return <Dummy data={data}/>
+  return <div>{}</div>;
 }
 
 export default Main;
