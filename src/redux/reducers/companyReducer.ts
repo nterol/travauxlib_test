@@ -1,4 +1,5 @@
 import { CompanyState } from "./types";
+import actionTypes from "../actionTypes";
 
 const companyState: CompanyState | {} = {};
 
@@ -7,8 +8,8 @@ function companyReducer(
   { type, payload }: { type: string; payload: CompanyState }
 ): CompanyState | {} {
   switch (type) {
-    case "SET_COMPANY": {
-      return { payload };
+    case actionTypes.setCompany: {
+      return { ...payload };
     }
     default:
       return state;

@@ -5,7 +5,6 @@ const fetcher = async () => {
     const { data } = await axios.get(
       "https://api.travauxlib.com/api/devis-pro/JKusHl8Ba8MABIjdCtLZOe2lxxnUfX"
     );
-    console.log(data);
     return data;
   } catch (e) {
     console.error(e);

@@ -8,16 +8,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-`;
-
-export const Gradient = styled.div`
-  background: #000046; /* fallback for old browsers */
-  background: linear-gradient(
+  background:  linear-gradient(
     to left,
-    #1cb5e0,
-    #000046
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  width: 500px;
-  height: 100px;
+    rgb(28, 181, 224),
+    rgb(0, 0, 70));
+  position: relative;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
 `;

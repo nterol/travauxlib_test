@@ -7,6 +7,7 @@ function* workerSaga() {
     const data = yield call(fetcher);
 
     const {
+      token,
       company,
       deal,
       title,
@@ -18,9 +19,10 @@ function* workerSaga() {
       prixTotalHTAvantRemise,
       remise,
       montantRemise,
+      modalitesPaiement,
       prixTotalHT,
       prixTotalTTC,
-      montantTVA,
+      montantsTVA,
       locations
     } = data;
 
@@ -35,12 +37,14 @@ function* workerSaga() {
       montantRemise,
       prixTotalHT,
       prixTotalTTC,
-      montantTVA
+      montantsTVA,
+      modalitesPaiement
     };
 
     yield put({ type: actionTypes.setPayment, payload: payment });
 
     const devisInfo = {
+      token,
       deal,
       title,
       introductionLetter,

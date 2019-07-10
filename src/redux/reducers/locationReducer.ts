@@ -1,7 +1,7 @@
 import { LocationState } from "./types";
 import actionTypes from "../actionTypes";
 
-const locationState: LocationState = [];
+const locationState: LocationState | [] = [];
 
 function locationReducer(
   state: LocationState = locationState,
