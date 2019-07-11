@@ -11,11 +11,6 @@ import {
 import styled from "styled-components";
 import PrestationContainer from "./PrestationContainer";
 
-const Container = styled(Card)`
-  padding: 32px;
-  margin-bottom: 16px;
-`;
-
 function LotList() {
   const lots: LotState = useSelector((state: StateType) => state.lots);
   const locationIndex: LocationState = useSelector(
@@ -23,7 +18,7 @@ function LotList() {
   );
 
   return (
-    <Container>
+    <>
       <h2>Détails des travaux :</h2>
       <Tabs id="uncontrolled-tab">
         {lots.map(({ label, lignes, prixTotalHT, prixTotalTTC }: Lot) => (
@@ -51,7 +46,7 @@ function LotList() {
           </Tab>
         ))}
       </Tabs>
-    </Container>
+    </>
   );
 }
 

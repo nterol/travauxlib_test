@@ -53,8 +53,10 @@ function* workerSaga() {
       dureeValidite
     };
 
+    console.log(JSON.stringify(locations));
+
     yield put({ type: actionTypes.setDevisInfo, payload: devisInfo });
-    yield put({ type: actionTypes.setLocation, payload: locations });
+    yield put({ type: actionTypes.setLocation, payload: { locations, lots } });
 
     yield put({ type: actionTypes.dispatchDone });
   } catch (error) {

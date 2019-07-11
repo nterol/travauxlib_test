@@ -63,7 +63,12 @@ export type Location = {
   label: string;
   surface: number;
 };
-export type LocationState = Array<Location>;
+
+export type IndexLocation = Array<Location>;
+export type LocationState = {
+  index: IndexLocation;
+  list: Array<Array<Lot>>;
+};
 
 export type Deal = {
   isTravauxLib: boolean;

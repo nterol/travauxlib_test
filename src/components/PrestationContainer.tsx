@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 import styled from "styled-components";
 import { Prestation, LocationState } from "../redux/reducers/types";
 
-import LocationDropdown from "./LocationDropdown";
+import LocationDropdown from "./LocationList";
 
 const Container = styled.div`
   padding: 32px;
@@ -55,14 +55,6 @@ const PrestationContainer = ({ lignes, label, locationIndex }: Props) => (
               </tr>
             </tbody>
           </Table>
-
-          {label !== "Autres" && (
-            <LocationDropdown
-              k={ligne.designation}
-              locations={ligne.locationsDetails.locations}
-              index={locationIndex}
-            />
-          )}
         </Inside>
       );
     })}

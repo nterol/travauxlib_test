@@ -54,7 +54,6 @@ function Timeline() {
       splitGradient("rgb(0, 0, 70)", "rgb(28, 181, 224)", modalite.length + 6)
     );
   }, [modalite]);
-  console.log(gradientList);
 
   let y: number = 0;
 
