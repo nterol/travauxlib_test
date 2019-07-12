@@ -15,7 +15,7 @@ function locationReducer(
       const prelist = payload.locations.map(salle =>
         payload.lots.flatMap(({ lignes }) =>
           lignes.map(ligne => {
-            const result = ligne.locationsDetails.locations.map(
+            const result = ligne.locationsDetails.locations.filter(
               location => location.uuid === salle.uuid
             );
 

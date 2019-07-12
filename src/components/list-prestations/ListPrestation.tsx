@@ -12,11 +12,12 @@ const Container = styled(Card)`
 
 const Toolbar = styled(ButtonToolbar)`
   justify-content: space-evenly;
+  margin-bottom: 32px;
 `;
 
 function ListPrestation() {
-  const [perJob, setPerJob] = useState<boolean>(true);
-  const [perRoom, setPerRoom] = useState<boolean>(false);
+  const [perJob, setPerJob] = useState<boolean>(false);
+  const [perRoom, setPerRoom] = useState<boolean>(true);
 
   const handleView = () => {
     setPerJob(!perJob);

@@ -1,9 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import styled from "styled-components";
-import { Prestation, LocationState } from "../redux/reducers/types";
-
-import LocationDropdown from "./LocationList";
+import { Prestation } from "../../redux/reducers/types";
 
 const Container = styled.div`
   padding: 32px;
@@ -21,10 +19,10 @@ const Inside = styled.div`
 type Props = {
   lignes: Array<Prestation>;
   label: string;
-  locationIndex: LocationState;
+  uuid?: string;
 };
 
-const PrestationContainer = ({ lignes, label, locationIndex }: Props) => (
+const PrestationContainer = ({ lignes, label, uuid }: Props) => (
   <Container>
     {lignes.map((ligne, i) => {
       if (label !== "Autres" && !ligne.locationsDetails.quantityIsByLocation)
@@ -39,6 +37,11 @@ const PrestationContainer = ({ lignes, label, locationIndex }: Props) => (
             <thead>
               <tr>
                 <th>Quantité</th>
+                {label === "room" ? (
+                  <th>quantité dans cette salle</th>
+                ) : (
+                  undefined
+                )}
                 <th>prix unitaire hors taxes</th>
                 <th>prix hors taxes</th>
                 <th>Montant de la TVA</th>
@@ -48,6 +51,23 @@ const PrestationContainer = ({ lignes, label, locationIndex }: Props) => (
             <tbody>
               <tr>
                 <td>{ligne.quantite}</td>
+                {label === "room" ? (
+                  <th>
+                    {ligne.locationsDetails.locations.map(l =>
+                      l.uuid === uuid ? (
+                        <React.Fragment
+                          key={`${ligne.designation}_${l.quantite}`}
+                        >
+                          {l.quantite}
+                        </React.Fragment>
+                      ) : (
+                        undefined
+                      )
+                    )}
+                  </th>
+                ) : (
+                  undefined
+                )}
                 <td>{ligne.prixUnitaireHT}</td>
                 <td>{ligne.prixTTC}</td>
                 <td>{ligne.montantTVA}</td>

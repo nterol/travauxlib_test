@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { StateType, PaymentState } from "../redux/reducers/types";
+import { StateType, PaymentState } from "../../redux/reducers/types";
 import { Card } from "react-bootstrap";
 import Timeline from "./Timeline";
 

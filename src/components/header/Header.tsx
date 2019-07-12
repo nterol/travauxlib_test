@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import styled from "styled-components";
 
 import { useSelector } from "react-redux";
-import { StateType } from "../redux/reducers/types";
+import { StateType } from "../../redux/reducers/types";
 import CompanyHeader from "./CompanyHeader";
 import Customer from "./Customer";
 

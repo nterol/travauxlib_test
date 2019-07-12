@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
-import { StateType } from "../redux/reducers/types";
+import { StateType } from "../../redux/reducers/types";
 import styled from "styled-components";
 
 const Container = styled.div`

@@ -65,9 +65,10 @@ export type Location = {
 };
 
 export type IndexLocation = Array<Location>;
+
 export type LocationState = {
   index: IndexLocation;
-  list: Array<Array<Lot>>;
+  list: Array<Array<Prestation>>;
 };
 
 export type Deal = {

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { linearGradient } from "polished";
 
 import splitGradient from "./utils/splitGradient";
-import { StateType } from "../redux/reducers/types";
+import { StateType } from "../../redux/reducers/types";
 
 const Row = styled.div`
   padding: 16px;
@@ -36,7 +36,7 @@ const GradientRound = styled.div`
 `;
 
 const Mod = styled.div`
-  font-size: 14px;
+  font-size: 14px;
   font-weight: bold;
 
   span {

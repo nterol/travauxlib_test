@@ -1,21 +1,18 @@
 import React from "react";
 import { Container } from "./styles";
 
-import Header from "./Header";
+import Header from "./header/Header";
 import Insurances from "./Insurances";
-import LotList from "./LotList";
 import Footer from "./Footer";
-import PaymentList from "./PaymentList";
+import PaymentList from "./payment-list/PaymentList";
 import DealInfo from "./DealInfo";
-import PrestationContainer from "./PrestationContainer";
-import ListPrestation from "./ListPrestation";
+import ListPrestation from "./list-prestations/ListPrestation";
 
 const Devis = () => (
   <Container>
     <Header />
     <DealInfo />
     <ListPrestation />
-
     <PaymentList />
     <Insurances />
     <Footer />
